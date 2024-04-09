@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.util.Arrays;
+
 @RestController
 @RequestMapping(produces = "application/json")
 public class LanguageController {
@@ -22,8 +24,11 @@ public class LanguageController {
 
     @GetMapping
     public Flux<Language> index() {
+
+
         return languageRepo.findAll();
     }
+
 
     @GetMapping("/{name}")
     public Mono<Language> show(@PathVariable("name") String name) {
