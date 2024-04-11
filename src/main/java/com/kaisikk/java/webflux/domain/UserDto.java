@@ -15,6 +15,10 @@ public class UserDto {
 
     String body;
 
-
-
+    public UserDto(Long userId, Long id, String title, String body) {
+        this.userId = userId;
+        this.id = id;
+        this.title = title;
+        this.body = body;
+    }
 }
