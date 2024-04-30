@@ -31,15 +31,15 @@ public class UserDtoController {
         webClient = WebClient.create("https://jsonplaceholder.typicode.com");
     }
 
-    @GetMapping("/{id}")
-    public Mono<UserDto> getById(@PathVariable("id") String id){
-        return webClient
-                .get()
-                .uri("/posts/{id}", id)
-                // работает с телом
-                .retrieve()
-                .bodyToMono(UserDto.class);
-    }
+//    @GetMapping("/{id}")
+//    public Mono<UserDto> getById(@PathVariable("id") String id){
+//        return webClient
+//                .get()
+//                .uri("/posts/{id}", id)
+//                // работает с телом
+//                .retrieve()
+//                .bodyToMono(UserDto.class);
+//    }
 
      @GetMapping(value = "/stream", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public Flux<UserDto> streaList(){
